@@ -31,9 +31,10 @@ public class Dialog {
 
         JButton ok = new JButton("OK");
         ok.addActionListener(e -> {
-            dialog.dispose();
-            synchronized (Dialog.class) {
-                Dialog.class.notifyAll();
+            try {
+                close();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
             }
         });
 
