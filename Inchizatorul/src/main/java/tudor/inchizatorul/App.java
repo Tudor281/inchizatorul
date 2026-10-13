@@ -29,11 +29,11 @@ public class App {
             Thread.sleep(10000);
             long minutes = convertToMinutes(getIdleTimeMillis());
 
-            if (muted && minutes >= 5) {
+            if (muted && minutes >= 1) {
                 shutdown();
             }
 
-            if (minutes >= 55) {
+            if (minutes >= 1) {
                 mute();
                 Dialog.showDialog("PC will shut down...");
             }
